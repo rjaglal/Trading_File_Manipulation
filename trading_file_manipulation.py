@@ -1,9 +1,12 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 
 def read_csv():
     df = pd.read_csv("data_files/comtrade.csv")
-    print(df['Reporter'][10:21])
+    print(df[['Reporter', 'Trade Value (US$)']][100:131])
+    df[['Reporter', 'Trade Value (US$)']][100:131].plot()
+    plt.show()
 
 
 def hello_world():
