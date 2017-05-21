@@ -18,10 +18,10 @@ def symbol_to_path(symbol, base_dir="data_files"):
 
 
 # Plot stock price dataframes
-def plot_data(df, title="Stock Prices"):
+def plot_data(df, title="Stock Prices", xlabel="Date", ylabel="Price"):
     ax = df.plot(title=title, fontsize=10)
-    ax.set_xlabel("Date")
-    ax.set_ylabel("Price")
+    ax.set_xlabel(xlabel)
+    ax.set_ylabel(ylabel)
     plt.show()
 
 
