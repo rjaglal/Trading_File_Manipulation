@@ -85,11 +85,11 @@ def multiple_stock_histogram_analysis():
     dates = pd.date_range('2013-01-01', '2016-12-31')
     symbols = ['SPY', 'XOM']
     df = get_data(symbols, dates)
-    plot_data(df)
+    #plot_data(df)
 
     # Compute daily returns
     daily_returns = compute_daily_returns(df)
-    plot_data(daily_returns, title="Daily Returns", ylabel="Daily returns")
+    #plot_data(daily_returns, title="Daily Returns", ylabel="Daily returns")
 
     # Plot histogram directly from dataframe
     daily_returns['SPY'].hist(bins=20, label="SPY")
@@ -97,9 +97,10 @@ def multiple_stock_histogram_analysis():
     plt.legend(loc='upper right')
     plt.show()
 
-    ### OR
+    ### OR XXX FIX
 
-    daily_returns.plot.hist(bins=20)
+    daily_returns['SPY'].plot.hist(bins=20)
+    daily_returns['XOM'].plot.hist(bins=20)
     plt.show()
 
 
@@ -137,5 +138,5 @@ def one_stock_histogram_analysis():
 
 if __name__ == "__main__":
     #one_stock_histogram_analysis()
-    #multiple_stock_histogram_analysis()
-    scatter_plots()
+    multiple_stock_histogram_analysis()
+    #scatter_plots()

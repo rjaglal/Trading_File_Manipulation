@@ -74,7 +74,7 @@ def plot_selected(df, columns, start_index, end_index):
 
 
 # Normalizes all stock in dataframe
-def normalize_data(df):
+def normalize_dataframe(df):
     return df / df.ix[0, :]
 
 
@@ -91,7 +91,7 @@ def stock_engine():
     slice_start_date = '2012-05-06'
     slice_end_date = '2017-05-06'
 
-    norm_df = normalize_data(df)
+    norm_df = normalize_dataframe(df)
     selective_symbols = ['GOOG', 'IBM']
 
     ### IMPORTANT: The symbols variable below is affected
